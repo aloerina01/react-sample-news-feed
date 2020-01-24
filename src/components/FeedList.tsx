@@ -7,9 +7,17 @@ import { SmallImageFeedItem } from "./SmallImageFeedItem";
 const renderFeedItem = (feedItem: FeedItem, index: number): React.ReactNode => {
   switch (feedItem.type) {
     case FeedItemDisplayType.BigImage:
-      return <BigImageFeedItem index={index} feedItem={feedItem} />;
+      return (
+        <BigImageFeedItem key={feedItem.id} index={index} feedItem={feedItem} />
+      );
     case FeedItemDisplayType.SmallImage:
-      return <SmallImageFeedItem index={index} feedItem={feedItem} />;
+      return (
+        <SmallImageFeedItem
+          key={feedItem.id}
+          index={index}
+          feedItem={feedItem}
+        />
+      );
     default:
       return null;
   }
@@ -17,7 +25,7 @@ const renderFeedItem = (feedItem: FeedItem, index: number): React.ReactNode => {
 
 export const FeedList: React.FC<FeedListProps> = ({ feedItems }) => {
   return (
-    <section>
+    <section className="feedlist">
       <div>a</div>
       {feedItems.map((item, index) => renderFeedItem(item, index))}
     </section>

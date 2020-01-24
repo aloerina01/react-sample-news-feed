@@ -3,23 +3,22 @@ import { FeedItemProps } from "../types/FeedItem";
 
 export const SmallImageFeedItem: React.FC<FeedItemProps> = ({
   feedItem,
-  index,
-  onClick
+  index
 }) => {
   return (
-    <div>
+    <div className="feeditem feeditem-smallimage">
       <a href={feedItem.href}>
-        <div>
-          <h3>{feedItem.title}</h3>
-          <p>{feedItem.description}</p>
-          <p>
-            <img src={feedItem.imageUrl} alt={feedItem.title} />
-          </p>
+        <div className="labelbox">
+          <h3 className="title">{feedItem.title}</h3>
+          <p className="description">{feedItem.description}</p>
         </div>
-        <div>
+        <div className="imagebox">
+          <img src={feedItem.imageUrl} alt={feedItem.title} />
+        </div>
+        <div className="metabox">
           <p>
             <img src={feedItem.publisherImageUrl} alt={feedItem.publisher} />
-            <span>{feedItem.publisher}</span>
+            <span className="publisher">{feedItem.publisher}</span>
           </p>
         </div>
       </a>
