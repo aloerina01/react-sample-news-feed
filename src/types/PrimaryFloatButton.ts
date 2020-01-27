@@ -1,4 +1,5 @@
 export type PrimaryFloatButtonProps = {
   label: string;
-  onClick: () => {};
+  isDisplay: boolean;
+  onClick: () => void;
 };

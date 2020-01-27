@@ -8,18 +8,22 @@ export const SmallImageFeedItem: React.FC<FeedItemProps> = ({
   return (
     <div className="feeditem feeditem-smallimage">
       <a href={feedItem.href}>
-        <div className="labelbox">
-          <h3 className="title">{feedItem.title}</h3>
-          <p className="description">{feedItem.description}</p>
+        <div className="contentbox-margin">
+          <div className="content-label">
+            <h3 className="title">{feedItem.title}</h3>
+            <p className="description">{feedItem.description}</p>
+          </div>
+          <div className="content-image">
+            <img src={feedItem.imageUrl} alt={feedItem.title} />
+          </div>
         </div>
-        <div className="imagebox">
-          <img src={feedItem.imageUrl} alt={feedItem.title} />
-        </div>
-        <div className="metabox">
-          <p>
-            <img src={feedItem.publisherImageUrl} alt={feedItem.publisher} />
-            <span className="publisher">{feedItem.publisher}</span>
-          </p>
+        <div className="contentbox-margin">
+          <div className="content-meta">
+            <p>
+              <img src={feedItem.publisherImageUrl} alt={feedItem.publisher} />
+              <span className="publisher">{feedItem.publisher}</span>
+            </p>
+          </div>
         </div>
       </a>
     </div>

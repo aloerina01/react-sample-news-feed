@@ -47,13 +47,16 @@ const sampleData: Array<FeedItem> = [
   }
 ];
 
+let isDisplayForTest = true;
+
 export default function App() {
   return (
     <div className="App">
       <FeedList feedItems={sampleData} />
       <PrimaryFloatButton
         label="タップして新しい情報を取得できます"
-        onClick={() => console.log()}
+        isDisplay={isDisplayForTest}
+        onClick={() => {}}
       />
     </div>
   );

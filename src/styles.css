@@ -3,6 +3,29 @@
   text-align: center;
 }
 
+.primary-button-area {
+  position: fixed;
+  bottom: -40px;
+  width: 100%;
+  transition: bottom 0.3s ease-in-out;
+}
+
+.primary-button-area.show {
+  bottom: 40px;
+}
+
+.primary-button-area button {
+  border: none;
+  appearance: none;
+  outline: none;
+  color: #fff;
+  background-color: #2979ff;
+  padding: 0.7% 2.5%;
+  border-radius: 20px;
+  box-shadow: 2px 2px 6px #aaa;
+  z-index: 100;
+}
+
 .feedlist {
   display: block;
   position: relative;
@@ -21,7 +44,8 @@
   display: block;
   border-radius: 10px;
   box-shadow: 2px 2px 10px #ddd;
-  margin: 16px;
+  max-width: 388px;
+  margin: 16px auto;
   text-align: left;
 }
 
@@ -29,8 +53,28 @@
   text-decoration: none;
 }
 
-.feeditem .labelbox {
-  padding: 8px 16px;
+.feeditem .contentbox-fit {
+  padding: 20px 0 0;
+}
+
+.feeditem .contentbox-fit:first-child {
+  padding: 0;
+  border-radius: 10px 10px 0 0;
+}
+
+.feeditem .contentbox-fit:last-child {
+  padding: 20px 0 0 0;
+  border-radius: 0 0 10px 10px;
+}
+
+.feeditem .contentbox-margin,
+.contentbox-margin:first-child {
+  padding: 16px 16px 0 16px;
+}
+
+.feeditem .contentbox-margin:only-child,
+.contentbox-margin:last-child {
+  padding: 16px;
 }
 
 .feeditem .title {
@@ -45,25 +89,53 @@
   line-height: 2;
 }
 
-.feeditem .metabox {
-  padding: 16px;
+.feeditem .content-meta {
+  position: relative;
 }
 
-.feeditem .metabox img {
-  width: 16px;
-  height: 16px;
-  object-fit: cover;
+.feeditem .content-meta img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  position: absolute;
+  top: 4px;
+  left: 0;
 }
 
-.feeditem .metabox .publisher {
-  padding: 0 0 0 4px;
+.feeditem .content-meta .publisher {
+  padding: 0 0 0 24px;
   font-size: 0.7rem;
   color: #777;
 }
 
-.feeditem-bigimage .imagebox img {
+.feeditem-bigimage .content-image {
+  height: 220px;
+  border-radius: inherit;
+}
+
+.feeditem-bigimage .content-image img {
   width: 100%;
   height: 100%;
-  border-radius: 10px 10px 0 0;
   object-fit: cover;
+  border-radius: inherit;
+}
+
+.feeditem-smallimage .contentbox-margin {
+  display: flex;
+  align-items: flex-start;
+}
+
+.feeditem-smallimage .content-image {
+  width: 96px;
+  min-width: 96px;
+  max-width: 96px;
+  height: 96px;
+  margin-left: auto;
+}
+
+.feeditem-smallimage .content-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
 }
