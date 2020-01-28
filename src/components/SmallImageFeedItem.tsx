@@ -19,10 +19,15 @@ export const SmallImageFeedItem: React.FC<FeedItemProps> = ({
         </div>
         <div className="contentbox-margin">
           <div className="content-meta">
-            <p>
-              <img src={feedItem.publisherImageUrl} alt={feedItem.publisher} />
-              <span className="publisher">{feedItem.publisher}</span>
-            </p>
+            <img
+              className="publisher-icon"
+              src={feedItem.publisherImageUrl}
+              alt={feedItem.publisher}
+            />
+            <span className="publisher-name">{feedItem.publisher}</span>
+            <div className="menu-button">
+              <img src="/assets/menu.png" alt="menu" />
+            </div>
           </div>
         </div>
       </a>
