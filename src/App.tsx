@@ -1,6 +1,5 @@
 import * as React from "react";
-import { FeedList } from "./components/FeedList";
-import { PrimaryFloatButton } from "./components/PrimaryFloatButton";
+import { FeedListContainer } from "./containers/FeedListContainer";
 import "./styles.css";
 import { FeedItem } from "./types/FeedItem";
 import { FeedItemDisplayType } from "./types/FeedItem";
@@ -47,17 +46,10 @@ const sampleData: Array<FeedItem> = [
   }
 ];
 
-let isDisplayForTest = true;
-
 export default function App() {
   return (
     <div className="App">
-      <FeedList feedItems={sampleData} />
-      <PrimaryFloatButton
-        label="タップして新しい情報を取得できます"
-        isDisplay={isDisplayForTest}
-        onClick={() => {}}
-      />
+      <FeedListContainer feedItems={sampleData} />
     </div>
   );
 }
