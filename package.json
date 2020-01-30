@@ -5,6 +5,8 @@
   "keywords": [],
   "main": "src/index.tsx",
   "dependencies": {
+    "@types/fbemitter": "2.0.32",
+    "fbemitter": "2.1.1",
     "react": "16.8.4",
     "react-dom": "16.8.4",
     "react-scripts": "2.1.3"
