@@ -1,7 +1,8 @@
+import { State } from "../types/State";
 import { ModalState, ModalType } from "../types/ModalState";
 import { createObservableStore } from "../StoreFactory";
 
-export const modalState: ModalState = {
+export const modalState: ModalState & State = {
   isDisplay: false,
   modalType: ModalType.None,
   data: null

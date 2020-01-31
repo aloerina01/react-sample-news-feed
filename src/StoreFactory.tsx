@@ -1,4 +1,5 @@
 import { EventEmitter } from "fbemitter";
+import { State } from "./types/State";
 
 function createObservableStore<S>(initialState: S): ObservableStore<S> {
   return new ObservableStore(initialState);
@@ -6,15 +7,15 @@ function createObservableStore<S>(initialState: S): ObservableStore<S> {
 
 const EVENT_UPDATE = "update";
 
-class ObservableStore<S> {
+export class ObservableStore<S> {
   private emitter: EventEmitter;
-  private state: S;
+  private state: S & State;
   private revision: number;
 
   constructor(initialState: S) {
     this.state = initialState;
   }
-  update(state) {
+  update(state: S) {
     this.state = state;
     this.revision++;
     this.emitter.emit(EVENT_UPDATE);
