@@ -23,7 +23,7 @@ export class ObservableStore<S> {
     // this.histories = []
   }
   getState() {
-    return { ...this.state };
+    return this.state;
   }
   getRevision() {
     return this.revision;

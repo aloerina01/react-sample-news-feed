@@ -3,8 +3,7 @@ import { ModalState, ModalType } from "../types/ModalState";
 import { createObservableStore } from "../StoreFactory";
 
 export const modalState: ModalState & State = {
-  isDisplay: false,
-  modalType: ModalType.None,
+  activeModalType: ModalType.None,
   data: null
 };
 
