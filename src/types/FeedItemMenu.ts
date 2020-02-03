@@ -1,6 +1,6 @@
 import { FeedItem } from "./FeedItem";
 
-export type FeedItemMenuState = {
+export type FeedItemMenuProps = {
   isDisplay: boolean;
-  target?: FeedItem;
+  data: FeedItem | null;
 };

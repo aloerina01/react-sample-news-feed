@@ -14,6 +14,7 @@ export class ObservableStore<S> {
 
   constructor(initialState: S) {
     this.state = initialState;
+    this.emitter = new EventEmitter();
   }
   update(state: S) {
     this.state = state;
@@ -29,6 +30,9 @@ export class ObservableStore<S> {
   }
   addListener(callback: (eventType?: string) => void): { remove: () => void } {
     return this.emitter.addListener(EVENT_UPDATE, callback);
+  }
+  removeAllListeners() {
+    return this.emitter.removeAllListeners(EVENT_UPDATE);
   }
 }
 

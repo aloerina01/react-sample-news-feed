@@ -1,9 +1,11 @@
 import * as React from "react";
-import { FeedItemMenuState } from "../types/FeedItemMenu";
+import { FeedItemMenuProps } from "../types/FeedItemMenu";
 
-export const FeedItemMenu: React.FC = () => {
-  const [{ isDisplay, target }] = useFeedItemMenu();
-  if (!isDisplay || !target) {
+export const FeedItemMenu: React.FC<FeedItemMenuProps> = ({
+  isDisplay,
+  data
+}) => {
+  if (!isDisplay || !data) {
     return null;
   }
   return <div>a</div>;

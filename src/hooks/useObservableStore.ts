@@ -1,14 +1,12 @@
-import { useReducer } from "react";
+import { useReducer, useEffect } from "react";
 import { ObservableStore } from "../StoreFactory";
-import { State } from "../types/State";
 
-// TODO: implements
-export function useObservableStore(
-  stores: Array<ObservableStore<State>>,
-  calculateState: () => State
-): State {
-  const initialState = {};
-  const [calculatedState, dispatch] = useReducer(calculateState, initialState);
-  stores.forEach(store => store.addListener(() => dispatch(store.getState())));
-  return calculatedState;
+export function useObservableStore<S>(store: ObservableStore<S>) {
+  const reducer = (state: S): S => state;
+  const [initialState, dispatch] = useReducer(reducer, store.getState());
+  useEffect(() => {
+    store.addListener(() => dispatch(store.getState()));
+    return store.removeAllListeners();
+  });
+  return initialState;
 }
