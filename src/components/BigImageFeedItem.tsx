@@ -1,10 +1,15 @@
 import * as React from "react";
 import { FeedItemProps } from "../types/FeedItem";
+import { openFeedItemMenu } from "../usecases/OpenFeedItemMenu";
 
 export const BigImageFeedItem: React.FC<FeedItemProps> = ({
   feedItem,
   index
 }) => {
+  const onClickMenuIcon = (event: React.MouseEvent<HTMLInputElement>): void => {
+    event.preventDefault();
+    openFeedItemMenu(feedItem);
+  };
   return (
     <div className="feeditem feeditem-bigimage">
       <a href={feedItem.href}>
@@ -27,7 +32,7 @@ export const BigImageFeedItem: React.FC<FeedItemProps> = ({
               alt={feedItem.publisher}
             />
             <span className="publisher-name">{feedItem.publisher}</span>
-            <div className="menu-button">
+            <div className="menu-button" onClick={onClickMenuIcon}>
               <img src="/assets/menu.png" alt="menu" />
             </div>
           </div>

@@ -22,6 +22,9 @@ export class ObservableStore<S> {
     this.emitter.emit(EVENT_UPDATE);
     // this.histories = []
   }
+  asyncUpdate(state: S) {
+    // TODO: implements
+  }
   getState() {
     return this.state;
   }
