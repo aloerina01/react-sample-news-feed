@@ -8,8 +8,8 @@ function createObservableStore<S>(initialState: S): ObservableStore<S> {
 const EVENT_UPDATE = "update";
 
 export class ObservableStore<S> {
+  state: S & State;
   private emitter: EventEmitter;
-  private state: S & State;
   private revision: number;
 
   constructor(initialState: S) {
