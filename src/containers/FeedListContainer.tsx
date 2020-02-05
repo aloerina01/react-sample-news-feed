@@ -8,10 +8,9 @@ import { FeedItemsStore } from "../stores/FeedItemsStore";
 import { useObservableStore } from "../hooks/useObservableStore";
 import { ReloadFeedItems } from "../usecases/ReloadFeedItems";
 import { ModalState, ModalType } from "../types/ModalState";
-import { FeedListContainerProps } from "../types/FeedListContainer";
 import { FeedItem } from "../types/FeedItem";
 
-export const FeedListContainer: React.FC<FeedListContainerProps> = () => {
+export const FeedListContainer: React.FC = () => {
   // container上にstoreのstateを格納する空間を用意する
   const modalState = useObservableStore<ModalState>(ModalStateStore);
   const feedItems = useObservableStore<Array<FeedItem>>(FeedItemsStore);
