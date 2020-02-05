@@ -1,12 +1,14 @@
 import * as React from "react";
-import { FeedListContainerProps } from "../types/FeedListContainer";
 import { FeedList } from "../components/FeedList";
 import { PrimaryFloatButton } from "../components/PrimaryFloatButton";
 import { FeedItemMenu } from "../components/FeedItemMenu";
+import { LoadingSpinner } from "../components/LoadingSpinner";
 import { ModalStateStore } from "../stores/ModalStateStore";
 import { FeedItemsStore } from "../stores/FeedItemsStore";
 import { useObservableStore } from "../hooks/useObservableStore";
+import { ReloadFeedItems } from "../usecases/ReloadFeedItems";
 import { ModalState, ModalType } from "../types/ModalState";
+import { FeedListContainerProps } from "../types/FeedListContainer";
 import { FeedItem } from "../types/FeedItem";
 
 export const FeedListContainer: React.FC<FeedListContainerProps> = () => {
@@ -16,11 +18,15 @@ export const FeedListContainer: React.FC<FeedListContainerProps> = () => {
 
   return (
     <section>
-      <FeedList feedItems={feedItems} />
+      {feedItems.length < 1 ? (
+        <LoadingSpinner />
+      ) : (
+        <FeedList feedItems={feedItems} />
+      )}
       <PrimaryFloatButton
         label="タップして新しい情報を取得できます"
         isDisplay={false}
-        onClick={() => {}}
+        onClick={ReloadFeedItems}
       />
       <FeedItemMenu
         isDisplay={modalState.activeModalType === ModalType.ItemMenu}

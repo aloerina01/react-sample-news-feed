@@ -5,7 +5,7 @@ export function reloadFeedItems() {
   // ダミー
   setTimeout(() => {
     FeedItemsStore.update(sampleData);
-  }, 200);
+  }, 500);
   // APIたたいてデータを取得
   // 必要あればnormalize
   // store更新

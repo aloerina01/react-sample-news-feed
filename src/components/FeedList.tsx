@@ -26,7 +26,6 @@ const renderFeedItem = (feedItem: FeedItem, index: number): React.ReactNode => {
 export const FeedList: React.FC<FeedListProps> = ({ feedItems }) => {
   return (
     <section className="feedlist">
-      <div>a</div>
       {feedItems.map((item, index) => renderFeedItem(item, index))}
     </section>
   );
