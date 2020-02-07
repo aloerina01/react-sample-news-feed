@@ -22,14 +22,30 @@ export const FeedItemMenu: React.FC<FeedItemMenuProps> = ({
         </div>
         <div className="modal-feeditem-menu-body">
           <ul className="menu-list">
-            <li className="menu-list-item">共有</li>
-            <li className="menu-list-item">この記事を表示しない</li>
-            <li className="menu-list-item">{data.category}に関心がない</li>
             <li className="menu-list-item">
-              {data.publisher}の記事を表示しない
+              <img src="/assets/baseline_share_black_18dp.png" alt="" />
+              <span>共有</span>
             </li>
-            <li className="menu-list-item">興味を管理</li>
-            <li className="menu-list-item">ご意見・ご要望</li>
+            <li className="menu-list-item">
+              <img src="/assets/baseline_highlight_off_black_18dp.png" alt="" />
+              <span>この記事を表示しない</span>
+            </li>
+            <li className="menu-list-item">
+              <img src="/assets/baseline_block_black_18dp.png" alt="" />
+              <span>{data.category}に関心がない</span>
+            </li>
+            <li className="menu-list-item">
+              <img src="/assets/baseline_block_black_18dp.png" alt="" />
+              <span>{data.publisher}の記事を表示しない</span>
+            </li>
+            <li className="menu-list-item">
+              <img src="/assets/baseline_color_lens_black_18dp.png" alt="" />
+              <span>興味を管理</span>
+            </li>
+            <li className="menu-list-item">
+              <img src="/assets/baseline_feedback_black_18dp.png" alt="" />
+              <span>ご意見・ご要望</span>
+            </li>
           </ul>
         </div>
         <div className="modal-feeditem-menu-footer">
