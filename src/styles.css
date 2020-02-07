@@ -188,14 +188,54 @@
   bottom: 0;
 }
 .modal-feeditem-menu {
-  height: 300px;
   background-color: #fff;
   border-top: #ddd;
   border-radius: 10px 10px 0 0;
+  font-size: 0.9rem;
 }
 
-.modal-feeditem-menu-title {
+.modal-feeditem-menu-header {
+  padding: 12px 20px;
+  display: flex;
+  background-color: #f8f8f8;
+  border-radius: inherit;
+}
+
+.modal-feeditem-menu-header .title {
+  padding: 8px;
+  font-weight: 700;
+}
+
+.modal-feeditem-menu-header .follow-button {
   padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  margin-left: auto;
+  transition: width 0.2s linear;
+  background-color: #fff;
+}
+
+.modal-feeditem-menu-body {
+  border-top: 1px solid #ddd;
+  padding: 0 20px;
+}
+
+.modal-feeditem-menu-body .menu-list {
+  list-style: none;
+}
+.modal-feeditem-menu-body .menu-list-item {
+  padding: 10px 8px;
+}
+
+.modal-feeditem-menu-footer {
+  margin: 0 auto;
+  width: 90%;
+  border-top: 1px solid #ddd;
+}
+
+.modal-feeditem-menu-footer .close-button {
+  padding: 12px 0;
+  text-align: center;
 }
 
 @-moz-keyframes loader {
