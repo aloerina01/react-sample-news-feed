@@ -15,6 +15,7 @@ export type FeedItem = {
   category: string;
   publisher: string;
   publisherImageUrl?: string;
+  isHided: boolean;
 };
 
 export type FeedItemProps = {

@@ -49,7 +49,9 @@ export const FeedItemMenu: React.FC<FeedItemMenuProps> = ({
           </ul>
         </div>
         <div className="modal-feeditem-menu-footer">
-          <div className="close-button">閉じる</div>
+          <div className="close-button" onClick={closeFeedItemMenu}>
+            閉じる
+          </div>
         </div>
       </div>
     </div>
