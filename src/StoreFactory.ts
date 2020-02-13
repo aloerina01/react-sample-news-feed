@@ -26,7 +26,10 @@ export class ObservableStore<S> {
     // TODO: implements
   }
   getState() {
-    return this.state;
+    if (Array.isArray(this.state)) {
+      return this.state.concat();
+    }
+    return { ...this.state };
   }
   getRevision() {
     return this.revision;
