@@ -1,7 +1,7 @@
 import { EventEmitter } from "fbemitter";
 import { State } from "./types/State";
 
-function createObservableStore<S>(initialState: S): ObservableStore<S> {
+export function createObservableStore<S>(initialState: S): ObservableStore<S> {
   return new ObservableStore(initialState);
 }
 
@@ -41,5 +41,3 @@ export class ObservableStore<S> {
     return this.emitter.removeAllListeners(EVENT_UPDATE);
   }
 }
-
-export { createObservableStore };
