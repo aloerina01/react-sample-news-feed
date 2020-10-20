@@ -15,6 +15,7 @@ export class ObservableStore<S> {
   constructor(initialState: S) {
     this.state = initialState;
     this.emitter = new EventEmitter();
+    this.revision = 1;
   }
   update(state: S) {
     this.state = state;
@@ -26,10 +27,11 @@ export class ObservableStore<S> {
     // TODO: implements
   }
   getState() {
-    if (Array.isArray(this.state)) {
-      return this.state.concat();
-    }
-    return { ...this.state };
+    // if (Array.isArray(this.state)) {
+    //   return this.state.concat();
+    // }
+    // return { ...this.state };
+    return this.state;
   }
   getRevision() {
     return this.revision;

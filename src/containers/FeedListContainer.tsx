@@ -6,7 +6,7 @@ import { LoadingSpinner } from "../components/LoadingSpinner";
 import { ModalStateStore } from "../stores/ModalStateStore";
 import { FeedItemsStore } from "../stores/FeedItemsStore";
 import { useObservableStore } from "../hooks/useObservableStore";
-import { ReloadFeedItems } from "../usecases/ReloadFeedItems";
+import { reloadFeedItems } from "../usecases/ReloadFeedItems";
 import { ModalState, ModalType } from "../types/ModalState";
 import { FeedItem } from "../types/FeedItem";
 
@@ -25,7 +25,7 @@ export const FeedListContainer: React.FC = () => {
       <PrimaryFloatButton
         label="タップして新しい情報を取得できます"
         isDisplay={false}
-        onClick={ReloadFeedItems}
+        onClick={reloadFeedItems}
       />
       <FeedItemMenu
         isDisplay={modalState.activeModalType === ModalType.ItemMenu}

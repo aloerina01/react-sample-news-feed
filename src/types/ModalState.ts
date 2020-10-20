@@ -1,4 +1,4 @@
-import { FeedItem } from "@/types/FeedItem";
+import { FeedItem } from "./FeedItem";
 
 export enum ModalType {
   ItemMenu,
